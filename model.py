@@ -12,14 +12,8 @@ from torch.utils.data import DataLoader, TensorDataset
 
 # Load and Merge OF Features with data validation
 def load_and_validate_data():
-    hog_eye = pd.read_csv("C:/Users/HP/Desktop/DATASET/AutFBio/HOG-eye-region.csv")
-    hog_face = pd.read_csv("C:/Users/HP/Desktop/DATASET/AutFBio/HOG-whole-face.csv")
-    # of_eye = pd.read_csv("C:/Users/HP/Desktop/DATASET/AutFBio/HOG-eye-region.csv")
-    # of_face = pd.read_csv("C:/Users/HP/Desktop/DATASET/AutFBio/HOG-whole-face.csv")
-    # G_eye = pd.read_csv("C:/Users/HP/Desktop/DATASET/AutFBio/HOG-eye-region.csv")
-    # of_face = pd.read_csv("C:/Users/HP/Desktop/DATASET/AutFBio/HOG-whole-face.csv")
-    # of_eye = pd.read_csv("C:/Users/HP/Desktop/DATASET/AutFBio/HOG-eye-region.csv")
-    # of_face = pd.read_csv("C:/Users/HP/Desktop/DATASET/AutFBio/HOG-whole-face.csv")
+    hog_eye = pd.read_csv("C:/Users/HP/Desktop/DATASET/AutFBio/HOG-eye-region.csv").drop(columns=["Unnamed: 0"], errors='ignore')
+    hog_face = pd.read_csv("C:/Users/HP/Desktop/DATASET/AutFBio/HOG-whole-face.csv").drop(columns=["Unnamed: 0"], errors='ignore')
     
     # Print basic statistics about the raw data
     print("Eye region data shape:", hog_eye.shape)
